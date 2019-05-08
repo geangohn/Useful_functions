@@ -1,0 +1,9 @@
+def f(x):
+    d = {}
+    d['a_sum'] = x['a'].sum()
+    d['a_max'] = x['a'].max()
+    d['b_mean'] = x['b'].mean()
+    d['c_d_prodsum'] = (x['c'] * x['d']).sum()
+    return pd.Series(d, index=['a_sum', 'a_max', 'b_mean', 'c_d_prodsum'])
+    
+df.groupby('group').apply(f)
