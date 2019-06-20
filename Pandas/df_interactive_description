@@ -1,0 +1,14 @@
+# Install
+pip install pandas-profiling
+
+# Use
+### importing the necessary packages
+import pandas as pd
+import pandas_profiling
+df = pd.read_csv('titanic/train.csv')
+pandas_profiling.ProfileReport(df)
+
+
+### export report to interactive html file
+profile = pandas_profiling.ProfileReport(df)
+profile.to_file(outputfile="Titanic data profiling.html")
