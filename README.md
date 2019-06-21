@@ -1,8 +1,10 @@
-# Useful_functions
-Good practices:
+# Good practices:
 
-1. Use [dask](https://dask.org/) for multiprocessing  
-2. Write the whole model as *pipeline*  
-2.1 Data cleansing  
-2.2 Feature engineering ([featuretools](https://github.com/Featuretools/featuretools), [tsfresh](https://tsfresh.readthedocs.io/en/latest/))  
-2.3 GridSearchCV (custom CV is usually better. Use dask to parallelize this step)  
+# 1. Use [dask](https://dask.org/) for multiprocessing  
+# 2. Write the whole model as *pipeline*  
+## 2.1 Data cleansing  
+## 2.2 Feature engineering 
+- [featuretools](https://github.com/Featuretools/featuretools)
+- [tsfresh](https://tsfresh.readthedocs.io/en/latest/))  
+## 2.3 GridSearchCV 
+- custom CV is usually better. Use dask to parallelize this step  
