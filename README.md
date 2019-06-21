@@ -1,4 +1,4 @@
-# Good practices:
+# Good practices
 
 ## 1. Use [dask](https://dask.org/) for multiprocessing  
 - A great tool
