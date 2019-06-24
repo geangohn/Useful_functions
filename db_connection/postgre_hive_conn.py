@@ -22,3 +22,24 @@ class DB:
 
     def close(self):
         self.conn.close()
+        
+    def copy(self, df, table, schema='public', if_exists='fail'):
+        """Запись в базу в ~100 раз быстрее, чем .to_sql
+        Построчно записывает датафрейм в базу
+        """
+        output = 'temp_copy_upload.csv'
+        copy_sql = """COPY \"%s\".\"%s\" ("%s") FROM stdin WITH CSV HEADER DELIMITER as '\t' QUOTE '"' """ % \
+                   (schema, table, '","'.join(df.columns))
+        df.head(0).to_sql(table, self.engine, schema=schema, index=False, if_exists=if_exists)
+        df.to_csv(output, sep='\t', index=False, escapechar='"')
+        with open(output, 'r') as f:
+            self.cur.copy_expert(sql=copy_sql, file=f)
+        os.remove(output)
+        self.commit()
+        
+        
+# example
+from Useful_functions import DB
+db = DB(db='database')
+# df = ...
+db.copy(df, table='table_name', schema='schema_name', if_exists='replace')
