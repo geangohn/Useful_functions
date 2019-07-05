@@ -1,3 +1,10 @@
+import os
+import gc
+import time
+import numpy as np
+import pandas as pd
+
+
 def add_agg_features(df, gpby_cols, target_col, agg_funcs):
     '''
     Creates various target column agg features with given agg functions  
@@ -67,4 +74,14 @@ def create_sales_ewm_feats(df, gpby_cols, target_col, alpha=[0.9], shift=[1]):
         for s in shift:
             df['_'.join([target_col, 'lag', str(s), 'ewm', str(a)])] = \
                 gpby[target_col].shift(s).ewm(alpha=a).mean().values
+    return df
+
+
+def one_hot_encoder(df, ohe_cols=['store','item','dayofmonth','dayofweek','month','weekofyear']):
+    '''
+    One-Hot Encoder function
+    '''
+    print('Creating OHE features..\nOld df shape:{}'.format(df.shape))
+    df = pd.get_dummies(df, columns=ohe_cols)
+    print('New df shape:{}'.format(df.shape))
     return df
