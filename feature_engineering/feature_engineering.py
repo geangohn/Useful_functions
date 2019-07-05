@@ -5,7 +5,14 @@ import numpy as np
 import pandas as pd
 
 
-def add_target_agg_features(df, gpby_cols, target_col, agg_funcs):
+def add_target_agg_features(df, 
+                            gpby_cols, 
+                            target_col = ['store', 'item'], 
+                            agg_funcs={'mean':np.mean, 
+                                       'median':np.median, 
+                                       'max':np.max,      
+                                       'min':np.min, 
+                                       'std':np.std}):
     '''
     Creates various target column agg features with given agg functions  
     '''
@@ -18,7 +25,10 @@ def add_target_agg_features(df, gpby_cols, target_col, agg_funcs):
     return newdf
     
  
-def add_target_lag_feats(df, gpby_cols, target_col, lags):
+def add_target_lag_feats(df, 
+                         gpby_cols = ['store', 'item'], 
+                         target_col, 
+                         lags = [1, 3, 7, 14]):
 
     '''
     Creates various target column lag features with lags  
@@ -31,7 +41,11 @@ def add_target_lag_feats(df, gpby_cols, target_col, lags):
     return df
 
 
-def create_target_rolling_mean_feats(df, gpby_cols, target_col, windows, min_periods=2, 
+def create_target_rolling_mean_feats(df, 
+                                     gpby_cols = ['store', 'item'], 
+                                     target_col, 
+                                     windows = [2, 7], 
+                                     min_periods=2, 
                              shift=1, win_type=None):
                              
     '''
@@ -47,8 +61,11 @@ def create_target_rolling_mean_feats(df, gpby_cols, target_col, windows, min_per
     return df
 
 
-def create_target_rolling_median_feats(df, gpby_cols, target_col, windows, min_periods=2, 
-                            shift=1, win_type=None):
+def create_target_rolling_median_feats(df, gpby_cols, target_col, 
+                                       windows = [2, 7], 
+                                       min_periods=2, 
+                                       shift=1, 
+                                       win_type=None):
                             
     '''
     Creates  target column rolling median features 
