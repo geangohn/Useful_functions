@@ -92,13 +92,3 @@ def create_target_ewm_feats(df, gpby_cols, target_col, alpha=[0.9], shift=[1]):
             df['_'.join([target_col, 'lag', str(s), 'ewm', str(a)])] = \
                 gpby[target_col].shift(s).ewm(alpha=a).mean().values
     return df
-
-
-def one_hot_encoder(df, ohe_cols=['store','item','dayofmonth','dayofweek','month','weekofyear']):
-    '''
-    One-Hot Encoder function
-    '''
-    print('Creating OHE features..\nOld df shape:{}'.format(df.shape))
-    df = pd.get_dummies(df, columns=ohe_cols)
-    print('New df shape:{}'.format(df.shape))
-    return df
