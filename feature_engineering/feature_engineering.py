@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 
 
-def add_agg_features(df, gpby_cols, target_col, agg_funcs):
+def add_target_agg_features(df, gpby_cols, target_col, agg_funcs):
     '''
     Creates various target column agg features with given agg functions  
     '''
@@ -18,7 +18,7 @@ def add_agg_features(df, gpby_cols, target_col, agg_funcs):
     return newdf
     
  
-def create_sales_lag_feats(df, gpby_cols, target_col, lags):
+def add_target_lag_feats(df, gpby_cols, target_col, lags):
 
     '''
     Creates various target column lag features with lags  
@@ -31,7 +31,7 @@ def create_sales_lag_feats(df, gpby_cols, target_col, lags):
     return df
 
 
-def create_sales_rmean_feats(df, gpby_cols, target_col, windows, min_periods=2, 
+def create_target_rolling_mean_feats(df, gpby_cols, target_col, windows, min_periods=2, 
                              shift=1, win_type=None):
                              
     '''
@@ -47,7 +47,7 @@ def create_sales_rmean_feats(df, gpby_cols, target_col, windows, min_periods=2,
     return df
 
 
-def create_sales_rmed_feats(df, gpby_cols, target_col, windows, min_periods=2, 
+def create_target_rolling_median_feats(df, gpby_cols, target_col, windows, min_periods=2, 
                             shift=1, win_type=None):
                             
     '''
@@ -63,7 +63,7 @@ def create_sales_rmed_feats(df, gpby_cols, target_col, windows, min_periods=2,
     return df
 
 
-def create_sales_ewm_feats(df, gpby_cols, target_col, alpha=[0.9], shift=[1]):
+def create_target_ewm_feats(df, gpby_cols, target_col, alpha=[0.9], shift=[1]):
 
     '''
     Creates  target column exponentially weighted mean features 
