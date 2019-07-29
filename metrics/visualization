@@ -1,0 +1,47 @@
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import roc_auc_score
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+def precision_recall_curve(y_true, y_pred):
+    """Show the precision vs recall curve
+    
+    y_true: probabilities of target class
+    """
+    
+    # Calculate metrics across thresholds
+    precision, recall, t = precision_recall_curve(y_true, y_pred)
+    
+    # Plot the curve
+    plt.step(recall, precision, color='b', alpha=0.5,
+             where='post')
+    
+    # Fill in the curve
+    plt.fill_between(recall, precision, step='post', alpha=0.5,
+                     color='b')
+
+    plt.xlabel('Recall')
+    plt.ylabel('Precision')
+    plt.ylim([0.0, 1.05])
+    plt.xlim([0.0, 1.0])
+    plt.title("Precision vs. Recall Curve"); plt.show();
+
+
+def plot_confusion_matrix(y_true, y_pred):
+    """Plots confusion matrix
+    
+    y_true: probabilities of target class
+    """
+    confusion_matrix = confusion_matrix(y_true, y_pred)
+   
+    fig, ax = plt.subplots(figsize = (2.5, 2.5))
+    ax.matshow(confusion_matrix, cmap = plt.cm.Blues, alpha = 0.3)
+    for i in range(confusion_matrix.shape[0]):
+        for j in range(confusion_matrix.shape[1]):
+            ax.text(x=j, y=i,
+                   s = confusion_matrix[i,j],
+                   va = 'center', ha = 'center')
+    plt.xlabel('распознанная метка')
+    plt.ylabel('истинная метка')
+    plt.figure(figsize = (25, 15))
+    plt.show()
