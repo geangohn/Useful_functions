@@ -1,0 +1,8 @@
+В ноутбуке запустить
+
+"""
+!pip install jupyterthemes
+!jt -t chesterish
+"""
+
+Перезапустить ноутбук
