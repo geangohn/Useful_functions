@@ -2,7 +2,7 @@
 
 """
 !pip install jupyterthemes
-!jt -t chesterish
+!jt -t solarizedl   # песочная тема
 """
 
 Перезапустить ноутбук
