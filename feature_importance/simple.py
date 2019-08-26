@@ -15,7 +15,7 @@ def plot_feature_importances(importances = best_model.feature_importances_, X = 
     plt.xlim([-1, X.shape[1]])
 
     plt.tight_layout()
-    # plt.savefig(path + 'notebooks/5_reports/feature_importances_XGB_for_cointegration.jpg')
+    # plt.savefig('fe.jpg')
     plt.show()
     
 plot_feature_importances()
