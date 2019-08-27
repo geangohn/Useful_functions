@@ -10,6 +10,6 @@ gbm = lgb.train(
     valid_sets=lgb_eval,
     
     ###
-    callbacks=[lgb.reset_parameter(learning_rate = lambda current_round: alpha * e**(-k*current_round)
+    callbacks=[lgb.reset_parameter(learning_rate = lambda current_round: alpha * e**(-k*current_round))]
     ###
 )
