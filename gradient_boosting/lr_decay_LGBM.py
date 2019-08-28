@@ -17,7 +17,6 @@ gbm = lgb.train(
 
 
 ## Способ 2
-lambda_0 = 0.2
 delta = 0.01
 
 gbm = lgb.train(
@@ -29,6 +28,6 @@ gbm = lgb.train(
     
     ###
     callbacks=[lgb.reset_parameter(learning_rate = lambda current_round: 
-                                   lambda_0 - delta if current_round % 100 == 0 else lambda_0)]
+                                   params["learning_rate"] - delta * current_round // 100)]
     ###
 )
