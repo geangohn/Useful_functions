@@ -6,7 +6,7 @@ ANOVA
 
 1.2 Непараметричкеские
 
-$ \chi ^2 $
+$$\chi^2 = \sum \frac {(O - E)^2}{E}$$
 
 Fisher's exact test
 
