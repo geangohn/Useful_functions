@@ -6,7 +6,7 @@ ANOVA
 
 1.2 Непараметричкеские
 
-$\chi^2$
+$ \chi ^2 $
 
 Fisher's exact test
 
