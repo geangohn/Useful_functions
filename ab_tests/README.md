@@ -1,12 +1,13 @@
 ### 1. Классические А/В тесты
 1.1 Параметрические
+
 t-test
 
 ANOVA
 
-1.2 Непараметричкеские
+1.2 Непараметричкеские 
 
-$$\chi^2 = \sum \frac {(O - E)^2}{E}$$
+![Хи-квадрат](http://latex.codecogs.com/svg.latex?%5Cchi%5E2)
 
 Fisher's exact test
 
