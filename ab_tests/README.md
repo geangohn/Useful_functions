@@ -2,7 +2,8 @@
 ### 1.1 Параметрические
 
 *t-test*
-$$n_min = \sigma **2 * (z_\alpha + a_\beta)**2 / effect **2$$
+
+n_min = sigma^2 * (z_alpha + z_beta)^2 / effect^2
 
 *ANOVA*
 
