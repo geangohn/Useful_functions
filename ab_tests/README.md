@@ -20,7 +20,9 @@ n_min = sigma^2 * (z_alpha + z_beta)^2 / effect^2
 Позволяет более активным пользователям, которые совергают больше действий, иметь более высокий вес в метирке --> метрика более чувствительна к изменениям, так как активные польщзователи быстрее меняют свое поведение
 
 CTR = sum(clicks) / sum(views) . 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{\sum&space;{clicks}}&space;{\sum&space;views}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{\sum&space;{clicks}}&space;{\sum&space;views}" title="\frac{\sum {clicks}} {\sum views}" /></a>
+
+![formula(<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{\sum&space;{clicks}}&space;{\sum&space;views}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{\sum&space;{clicks}}&space;{\sum&space;views}" title="\frac{\sum {clicks}} {\sum views}" /></a>)
+
 CTR_weighted = sum(sqrt(views) * clicks / views) / sum(sqrt(views))
 
 ####
