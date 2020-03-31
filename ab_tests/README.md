@@ -21,7 +21,7 @@ n_min = sigma^2 * (z_alpha + z_beta)^2 / effect^2
 
 CTR = sum(clicks) / sum(views) . 
 
-![formula](<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{\sum&space;{clicks}}&space;{\sum&space;views}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{\sum&space;{clicks}}&space;{\sum&space;views}" title="\frac{\sum {clicks}} {\sum views}" /></a>)
+![formula](https://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Csum%20%7Bclicks%7D%7D%20%7B%5Csum%20views%7D)
 
 CTR_weighted = sum(sqrt(views) * clicks / views) / sum(sqrt(views))
 
