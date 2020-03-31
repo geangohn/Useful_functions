@@ -20,7 +20,7 @@ n_min = sigma^2 * (z_alpha + z_beta)^2 / effect^2
 Позволяет более активным пользователям, которые совергают больше действий, иметь более высокий вес в метирке --> метрика более чувствительна к изменениям, так как активные польщзователи быстрее меняют свое поведение
 
 
-![formula](https://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Csum%20%7Bclicks%7D%7D%20%7B%5Csum%20views%7D)
+![formula-1](https://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Csum%20%7Bclicks%7D%7D%20%7B%5Csum%20views%7D)
 
 
 ####
