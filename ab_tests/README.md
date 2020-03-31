@@ -26,6 +26,6 @@ n_min = sigma^2 * (z_alpha + z_beta)^2 / effect^2
 
 #### 1.2 Линеаризация
 Подходит для относительных метрик. В случае применения совместно с перевзвешиванием, сначала считаем *K*, а потом перевзвешиваем
-![formula-1](https://latex.codecogs.com/gif.latex?CTR%20%3D%20%5Cfrac%7B%5Csum%20%7Bclicks%7D%7D%20%7B%5Csum%20views%7D)
+![formula-4](https://latex.codecogs.com/gif.latex?CTR%20%3D%20%5Cfrac%7B%5Csum%20%7Bclicks%7D%7D%20%7B%5Csum%20views%7D)
 ![formula-3](https://latex.codecogs.com/gif.latex?%5Csum%20%7Bclicks%7D%20-%20K*%20%7Bviews%7D),
 где *K* - CTR на контроле
